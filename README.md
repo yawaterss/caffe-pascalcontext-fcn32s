@@ -1,1 +1,1 @@
-# caffe-fcn
+# caffe pascalcontext-fcn32s
