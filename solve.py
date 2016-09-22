@@ -17,7 +17,7 @@ caffe.set_device(0)
 caffe.set_mode_gpu()
 
 solver = caffe.SGDSolver('solver.prototxt')
-#solver.net.copy_from(weights)
+solver.net.copy_from(weights)
 
 # surgeries
 #interp_layers = [k for k in solver.net.params.keys() if 'up' in k]
