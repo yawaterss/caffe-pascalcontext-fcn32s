@@ -533,7 +533,7 @@ layer {
   name: "score_fr_sign"
   type: "Convolution"
   bottom: "fc7"
-  top: "score_fr"
+  top: "score_fr_sign"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -552,8 +552,8 @@ layer {
   #name: "upscore"
   name: "upscore_sign"
   type: "Deconvolution"
-  bottom: "score_fr"
-  top: "upscore"
+  bottom: "score_fr_sign"
+  top: "upscore_sign"
   param {
     lr_mult: 0
   }
@@ -567,7 +567,7 @@ layer {
 layer {
   name: "score"
   type: "Crop"
-  bottom: "upscore"
+  bottom: "upscore_sign"
   bottom: "data"
   top: "score"
   crop_param {
