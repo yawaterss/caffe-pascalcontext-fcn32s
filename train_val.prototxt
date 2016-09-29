@@ -546,6 +546,12 @@ layer {
     num_output: 2 #60
     pad: 0
     kernel_size: 1
+    weight_filler {
+        type: "xavier"
+    }   
+    bias_filler {
+        type: "constant"
+    } 
   }
 }
 layer {
@@ -562,6 +568,8 @@ layer {
     bias_term: false
     kernel_size: 64
     stride: 32
+    group: 2
+    weight_filler: { type: "bilinear" }
   }
 }
 layer {
